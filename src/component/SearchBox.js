@@ -25,7 +25,9 @@ const SearchBox = () => {
                     />
                 </Col>
                 <Col md={3}>
-                    <Button variant='secondary'>찾기</Button>
+                    <Button variant='secondary' type='submit'>
+                        찾기
+                    </Button>
                 </Col>
             </Row>
         </Form>
