@@ -1,16 +1,34 @@
-import React from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import React, {useState} from 'react';
+import {Button, Col, Form, Row} from 'react-bootstrap';
+import {useDispatch} from 'react-redux';
 
 const SearchBox = () => {
+    const [keyword, setKeyword] = useState('');
+    const dispatch = useDispatch();
+    const search = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'SEARCH',
+            payload: {keyword},
+        });
+    };
     return (
-        <Row>
-            <Col lg={10}>
-                <Form.Control type="textt" placeholder="이름을 입력해주세요." />
-            </Col>
-            <Col lg={2}>
-                <Button>찾기</Button>
-            </Col>
-        </Row>
+        <Form onSubmit={search}>
+            <Row>
+                <Col md={9}>
+                    <Form.Control
+                        type='text'
+                        placeholder='이름을 입력해주세요.'
+                        onChange={(e) => {
+                            setKeyword(e.target.value);
+                        }}
+                    />
+                </Col>
+                <Col md={3}>
+                    <Button variant='secondary'>찾기</Button>
+                </Col>
+            </Row>
+        </Form>
     );
 };
 

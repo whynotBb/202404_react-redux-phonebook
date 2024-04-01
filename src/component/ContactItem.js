@@ -1,19 +1,20 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import React from 'react';
+import {Col, Row} from 'react-bootstrap';
 
-const ContactItem = () => {
+const ContactItem = ({item}) => {
+    console.log(item);
     return (
-        <Row>
-            <Col lg={2}>
+        <Row className='contact_item'>
+            <Col md={3}>
                 <img
                     width={100}
-                    src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
-                    alt=""
+                    src='https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg'
+                    alt=''
                 />
             </Col>
-            <Col lg={10}>
-                <div>김땡땡</div>
-                <div>01012341234</div>
+            <Col md={9} className='item'>
+                <h4>{item.name}</h4>
+                <p>{item.phoneNumber}</p>
             </Col>
         </Row>
     );

@@ -1,3 +1,15 @@
 .title {
     text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+}
+.contact_item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+.contact_item .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
